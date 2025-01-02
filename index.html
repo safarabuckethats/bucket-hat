@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safara Hats - Happy Hat, Happy Day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFD1DC; /* Pink pastel */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+        }
+        header {
+            background-color: #FFECB3; /* Yellow pastel */
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Mengatur jarak antara logo dan teks */
+            align-items: center; /* Menyelaraskan konten secara vertikal */
+            padding-left: 20px; /* Memberi ruang di sebelah kiri untuk elemen */
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0 0;
+        }
+        header img {
+            width: 110px; /* Ukuran logo */
+            height: 100px;
+        }
+        header .text-container {
+            text-align: center; /* Menyelaraskan teks ke kiri */
+            flex-grow: 1; /* Membuat container mengisi ruang yang tersedia */
+            margin-left: 101px; /* Memberi ruang di sebelah kiri */
+        }
+        nav {
+            position: fixed; /* Fixed to the left */
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #FFD1DC; /* Pink pastel */
+            box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.1);
+            padding-top: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 180px; /* Width of the side menu */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+        nav.hide {
+            transform: translateX(-100%); /* Move the menu off screen */
+        }
+        nav a {
+            margin: 15px 0;
+            text-decoration: none;
+            color: #800000; /* Maroon */
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4B0000; /* Darker maroon */
+        }
+        section {
+            display: none;
+            width: 100%;
+            padding: 40px 20px; /* Menambahkan padding untuk jarak teks */
+            text-align: center;
+            min-height: 80vh; /* Memberikan tinggi minimum */
+        }
+        section.active {
+            display: block;
+        }
+        h2, h3, p {
+            margin-bottom: 20px; /* Memberikan jarak antar elemen teks */
+        }
+        .product img {
+            width: 300px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #FFECB3; /* Yellow pastel */
+            color: #333;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #800000; /* Maroon */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #4B0000; /* Darker maroon */
+        }
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 12px;
+        }
+        .social-icons i {
+            font-size: 35px; /* Adjust size of FontAwesome icons */
+            color: #800000; /* Maroon color to match theme */
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icons a:hover i {
+            color: #4B0000; /* Darker maroon color on hover */
+            transform: scale(1.2); /* Slightly enlarge icon on hover */
+        }
+
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em; /* Menyesuaikan ukuran font header */
+            }
+
+            header p {
+                font-size: 1em; /* Menyesuaikan ukuran font slogan */
+            }
+
+            nav a {
+                font-size: 1em; /* Menyesuaikan ukuran font menu */
+            }
+
+            section {
+                padding: 20px 10px; /* Mengurangi padding pada layar kecil */
+            }
+
+            body {
+                overflow-x: hidden; /* Menambahkan ini agar konten tidak melampaui lebar layar */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="text-container">
+            <h1>Safara Hats</h1>
+            <p>Happy Hat, Happy Day</p>
+        </div>
+        <img src="https://i.imgur.com/iCZaER3.png" alt="Safara Hats Logo">
+    </header>
+    <nav id="nav">
+        <a href="#" data-target="home">Home</a>
+        <a href="#" data-target="about">About</a>
+        <a href="#" data-target="product">Products</a>
+        <a href="#" data-target="contact">Contact</a>
+    </nav>
+    <section id="home" class="active">
+        <h2>Welcome to Safara Hats</h2>
+        <p>Nikmati tampilan gaya dengan koleksi bucket hat kami. Topi Ceria, Hari Bahagia!</p>
+    </section>
+    <section id="about">
+        <h2>About Safara Hats</h2>
+        <p> Safara Hats adalah brand yang didirikan oleh tiga sahabat, Alsandi, Fatila, dan Amira, dengan visi untuk menciptakan produk yang tidak hanya bergaya tetapi juga membawa kebahagiaan bagi para penggunanya. Nama "Safara" merupakan akronim yang terinspirasi dari nama pendiri: "Sa" dari Alsandi, "Fa" dari Fatila, dan "Ra" dari Amira, yang mencerminkan persahabatan mereka yang ceria dan penuh warna. Dengan semangat ini, Safara Hats hadir untuk memberikan produk yang melindungi dan membawa kebahagiaan pada setiap pemakainya. Produk utama kami adalah bucket hat berkualitas tinggi yang terbuat dari kombinasi bahan katun dan drill, dirancang dengan detail manik-manik yang menyenangkan untuk memberikan nilai estetika dan kenyamanan.</p>
+        <h3>Quality & Design</h3>
+        <p>Setiap topi yang kami produksi dirancang dengan perhatian penuh terhadap detail, mengutamakan kenyamanan dan fungsionalitas. Bahan katun dan drill yang digunakan menjamin daya tahan dan perlindungan optimal dari sinar UV. Manik-manik yang dipasang pada setiap topi menambah sentuhan ceria dan unik, sempurna untuk melengkapi aktivitas apa pun dengan gaya yang menyenangkan.</p>
+        <h3>Brand Vision</h3>
+        <p>Visi kami adalah untuk membawa kebahagiaan pada setiap hari pelanggan melalui produk yang tidak hanya memenuhi kebutuhan fungsional, tetapi juga memberikan nilai emosional. Safara Hats berkomitmen untuk menjadi bagian dari momen bahagia Anda, membawa warna dan keceriaan dalam setiap langkah hidup Anda.</p>
+    </section>
+    <section id="product">
+        <h2>Our Products</h2>
+        <div class="product">
+            <h3>Collection</h3>
+            <div class="image-container">
+                <img id="productImage1" src="https://i.imgur.com/AyeAtha.jpeg" alt="Product">
+            </div>
+        </div>
+        <div class="product">
+            <h3>Collection</h3>
+            <div class="image-container">
+                <img id="productImage2" src="https://i.imgur.com/n0OHWBo.jpeg" alt="Product">
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: safarabuckethats@gmail.com</p>
+        <p>Phone: +62 822-5688-2612</p>
+        <p>Address: Jl. Srikandi 2 Blok B2 No.12, Sungai Raya, Kec. Sungai Raya, Kabupaten Kubu Raya, Kalimantan Barat</p>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/safarahats" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61570916476968&mibextid=ZbWKwL" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.tiktok.com/@safara.hats" target="_blank">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://youtube.com/@safarahats?si=MRYGCIqPIeMs7ot4" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Safara Hats. All rights reserved.</p>
+    </footer>
+    <script>
+        const links = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+        const nav = document.getElementById('nav');
+        let lastScrollY = window.scrollY;
+
+        // Show/hide nav on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                nav.classList.add('hide'); // hide when scrolling down
+            } else {
+                nav.classList.remove('hide'); // show when scrolling up
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
